@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IBlogColumnMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.BlogColumn" >
+    <id column="BLOG_COLUMN_ALIAS" property="blogColumnAlias" jdbcType="VARCHAR" />
+    <result column="AUTHOR_ID" property="authorId" jdbcType="VARCHAR"/>
+    <result column="BLOG_COLUMN_NAME" property="blogColumnName" jdbcType="VARCHAR" />
+    <result column="BLOG_COLUMN_REMARK" property="blogColumnRemark" jdbcType="VARCHAR" />
+    <result column="BLOG_COLUMN_LOGO" property="blogColumnLogo" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    BLOG_COLUMN_ALIAS, AUTHOR_ID,BLOG_COLUMN_NAME, BLOG_COLUMN_REMARK, BLOG_COLUMN_LOGO
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_column
+    where BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from blog_column
+    where BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.BlogColumn" >
+    insert into blog_column (BLOG_COLUMN_ALIAS, BLOG_COLUMN_NAME, 
+      BLOG_COLUMN_REMARK, BLOG_COLUMN_LOGO)
+    values (#{blogColumnAlias,jdbcType=VARCHAR}, #{blogColumnName,jdbcType=VARCHAR}, 
+      #{blogColumnRemark,jdbcType=VARCHAR}, #{blogColumnLogo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.BlogColumn" >
+    insert into blog_column
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="blogColumnAlias != null" >
+        BLOG_COLUMN_ALIAS,
+      </if>
+      <if test="blogColumnName != null" >
+        BLOG_COLUMN_NAME,
+      </if>
+      <if test="blogColumnRemark != null" >
+        BLOG_COLUMN_REMARK,
+      </if>
+      <if test="blogColumnLogo != null" >
+        BLOG_COLUMN_LOGO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="blogColumnAlias != null" >
+        #{blogColumnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="blogColumnName != null" >
+        #{blogColumnName,jdbcType=VARCHAR},
+      </if>
+      <if test="blogColumnRemark != null" >
+        #{blogColumnRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="blogColumnLogo != null" >
+        #{blogColumnLogo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.BlogColumn" >
+    update blog_column
+    <set >
+      <if test="blogColumnName != null" >
+        BLOG_COLUMN_NAME = #{blogColumnName,jdbcType=VARCHAR},
+      </if>
+      <if test="blogColumnRemark != null" >
+        BLOG_COLUMN_REMARK = #{blogColumnRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="blogColumnLogo != null" >
+        BLOG_COLUMN_LOGO = #{blogColumnLogo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.BlogColumn" >
+    update blog_column
+    set BLOG_COLUMN_NAME = #{blogColumnName,jdbcType=VARCHAR},
+      BLOG_COLUMN_REMARK = #{blogColumnRemark,jdbcType=VARCHAR},
+      BLOG_COLUMN_LOGO = #{blogColumnLogo,jdbcType=VARCHAR}
+    where BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="queryAllColumnList" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from blog_column where AUTHOR_ID = #{authorId}
+  </select>
+</mapper>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IMenudefMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.Menudef" >
+    <id column="MDF_ID" property="mdfId" jdbcType="VARCHAR" />
+    <result column="MDF_DESC" property="mdfDesc" jdbcType="VARCHAR" />
+    <result column="MDF_URL" property="mdfUrl" jdbcType="VARCHAR" />
+    <result column="MDF_PARENTiD" property="mdfParentid" jdbcType="VARCHAR" />
+    <result column="MDF_SEQ" property="mdfSeq" jdbcType="VARCHAR" />
+    <result column="MDF_MENUCODE" property="mdfMenucode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MDF_ID, MDF_DESC, MDF_URL, MDF_PARENTiD, MDF_SEQ, MDF_MENUCODE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from menudef
+    where MDF_ID = #{mdfId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from menudef
+    where MDF_ID = #{mdfId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.Menudef" >
+    insert into menudef (MDF_ID, MDF_DESC, MDF_URL, 
+      MDF_PARENTiD, MDF_SEQ, MDF_MENUCODE
+      )
+    values (#{mdfId,jdbcType=VARCHAR}, #{mdfDesc,jdbcType=VARCHAR}, #{mdfUrl,jdbcType=VARCHAR}, 
+      #{mdfParentid,jdbcType=VARCHAR}, #{mdfSeq,jdbcType=VARCHAR}, #{mdfMenucode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.Menudef" >
+    insert into menudef
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mdfId != null" >
+        MDF_ID,
+      </if>
+      <if test="mdfDesc != null" >
+        MDF_DESC,
+      </if>
+      <if test="mdfUrl != null" >
+        MDF_URL,
+      </if>
+      <if test="mdfParentid != null" >
+        MDF_PARENTiD,
+      </if>
+      <if test="mdfSeq != null" >
+        MDF_SEQ,
+      </if>
+      <if test="mdfMenucode != null" >
+        MDF_MENUCODE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mdfId != null" >
+        #{mdfId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfDesc != null" >
+        #{mdfDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfUrl != null" >
+        #{mdfUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfParentid != null" >
+        #{mdfParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfSeq != null" >
+        #{mdfSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfMenucode != null" >
+        #{mdfMenucode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.Menudef" >
+    update menudef
+    <set >
+      <if test="mdfDesc != null" >
+        MDF_DESC = #{mdfDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfUrl != null" >
+        MDF_URL = #{mdfUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfParentid != null" >
+        MDF_PARENTiD = #{mdfParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfSeq != null" >
+        MDF_SEQ = #{mdfSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="mdfMenucode != null" >
+        MDF_MENUCODE = #{mdfMenucode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MDF_ID = #{mdfId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.Menudef" >
+    update menudef
+    set MDF_DESC = #{mdfDesc,jdbcType=VARCHAR},
+      MDF_URL = #{mdfUrl,jdbcType=VARCHAR},
+      MDF_PARENTiD = #{mdfParentid,jdbcType=VARCHAR},
+      MDF_SEQ = #{mdfSeq,jdbcType=VARCHAR},
+      MDF_MENUCODE = #{mdfMenucode,jdbcType=VARCHAR}
+    where MDF_ID = #{mdfId,jdbcType=VARCHAR}
+  </update>
+</mapper>

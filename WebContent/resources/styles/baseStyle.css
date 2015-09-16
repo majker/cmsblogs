@@ -1,0 +1,33 @@
+body {
+    color: #555555;
+    font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    overflow-x: hidden;
+    background-color: #eeeeee;
+    color: #555555;
+}
+
+.header {
+    margin-bottom: 10px;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header::before, .container::before, .footer::before, .header::after, .container::after, .footer::after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.header::after, .container::after, .footer::after {
+    clear: both;
+}
+
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}

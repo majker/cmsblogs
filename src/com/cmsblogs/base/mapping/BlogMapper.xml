@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IBlogMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.Blog" >
+    <id column="BLOG_ID" property="blogId" jdbcType="VARCHAR" />
+    <result column="BLOG_COLUMN_ALIAS" property="blogColumnAlias" jdbcType="VARCHAR" />
+    <result column="AUTHOR_ID" property="authorId" jdbcType="VARCHAR" />
+    <result column="BLOG_TITLE" property="blogTitle" jdbcType="VARCHAR" />
+    <result column="BLOG_CREATETIME" property="blogCreatetime" jdbcType="DATE" />
+    <result column="BLOG_VIEWER_CONTENT" property="blogViewerContent" jdbcType="INTEGER" />
+    <result column="BLOG_STICK" property="blogStick" jdbcType="CHAR" />
+    <result column="BLOGS_RECOMMEND" property="blogsRecommend" jdbcType="INTEGER" />
+    <result column="BLOGS_THUMBNAIL" property="blogsThumbnail" jdbcType="VARCHAR" />
+    <result column="BLOGS_ISCOMMENT" property="blogsIscomment" jdbcType="CHAR" />
+    <result column="BLOGS_STATE" property="blogsState" jdbcType="CHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.cmsblogs.base.pojo.Blog" extends="BaseResultMap" >
+    <result column="BLOG_CONTENT" property="blogContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    BLOG_ID, BLOG_COLUMN_ALIAS, AUTHOR_ID, BLOG_TITLE, BLOG_CREATETIME, BLOG_VIEWER_CONTENT, 
+    BLOG_STICK, BLOGS_RECOMMEND, BLOGS_THUMBNAIL, BLOGS_ISCOMMENT, BLOGS_STATE
+  </sql>
+  
+  <sql id="Blob_Column_List" >
+    BLOG_CONTENT
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog
+    where BLOG_ID = #{blogId,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from blog
+    where BLOG_ID = #{blogId,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.Blog" >
+    insert into blog (BLOG_ID, BLOG_COLUMN_ALIAS, AUTHOR_ID, 
+      BLOG_TITLE, BLOG_CREATETIME, BLOG_VIEWER_CONTENT, 
+      BLOG_STICK, BLOGS_RECOMMEND, BLOGS_THUMBNAIL, 
+      BLOGS_ISCOMMENT, BLOGS_STATE, BLOG_CONTENT
+      )
+    values (#{blogId,jdbcType=VARCHAR}, #{blogColumnAlias,jdbcType=VARCHAR}, #{authorId,jdbcType=VARCHAR}, 
+      #{blogTitle,jdbcType=VARCHAR}, #{blogCreatetime,jdbcType=DATE}, #{blogViewerContent,jdbcType=INTEGER}, 
+      #{blogStick,jdbcType=CHAR}, #{blogsRecommend,jdbcType=INTEGER}, #{blogsThumbnail,jdbcType=VARCHAR}, 
+      #{blogsIscomment,jdbcType=CHAR}, #{blogsState,jdbcType=CHAR}, #{blogContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.Blog" >
+    insert into blog
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="blogId != null" >
+        BLOG_ID,
+      </if>
+      <if test="blogColumnAlias != null" >
+        BLOG_COLUMN_ALIAS,
+      </if>
+      <if test="authorId != null" >
+        AUTHOR_ID,
+      </if>
+      <if test="blogTitle != null" >
+        BLOG_TITLE,
+      </if>
+      <if test="blogCreatetime != null" >
+        BLOG_CREATETIME,
+      </if>
+      <if test="blogViewerContent != null" >
+        BLOG_VIEWER_CONTENT,
+      </if>
+      <if test="blogStick != null" >
+        BLOG_STICK,
+      </if>
+      <if test="blogsRecommend != null" >
+        BLOGS_RECOMMEND,
+      </if>
+      <if test="blogsThumbnail != null" >
+        BLOGS_THUMBNAIL,
+      </if>
+      <if test="blogsIscomment != null" >
+        BLOGS_ISCOMMENT,
+      </if>
+      <if test="blogsState != null" >
+        BLOGS_STATE,
+      </if>
+      <if test="blogContent != null" >
+        BLOG_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="blogId != null" >
+        #{blogId,jdbcType=VARCHAR},
+      </if>
+      <if test="blogColumnAlias != null" >
+        #{blogColumnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null" >
+        #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="blogTitle != null" >
+        #{blogTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="blogCreatetime != null" >
+        #{blogCreatetime,jdbcType=DATE},
+      </if>
+      <if test="blogViewerContent != null" >
+        #{blogViewerContent,jdbcType=INTEGER},
+      </if>
+      <if test="blogStick != null" >
+        #{blogStick,jdbcType=CHAR},
+      </if>
+      <if test="blogsRecommend != null" >
+        #{blogsRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="blogsThumbnail != null" >
+        #{blogsThumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="blogsIscomment != null" >
+        #{blogsIscomment,jdbcType=CHAR},
+      </if>
+      <if test="blogsState != null" >
+        #{blogsState,jdbcType=CHAR},
+      </if>
+      <if test="blogContent != null" >
+        #{blogContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.Blog" >
+    update blog
+    <set >
+      <if test="blogColumnAlias != null" >
+        BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null" >
+        AUTHOR_ID = #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="blogTitle != null" >
+        BLOG_TITLE = #{blogTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="blogCreatetime != null" >
+        BLOG_CREATETIME = #{blogCreatetime,jdbcType=DATE},
+      </if>
+      <if test="blogViewerContent != null" >
+        BLOG_VIEWER_CONTENT = #{blogViewerContent,jdbcType=INTEGER},
+      </if>
+      <if test="blogStick != null" >
+        BLOG_STICK = #{blogStick,jdbcType=CHAR},
+      </if>
+      <if test="blogsRecommend != null" >
+        BLOGS_RECOMMEND = #{blogsRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="blogsThumbnail != null" >
+        BLOGS_THUMBNAIL = #{blogsThumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="blogsIscomment != null" >
+        BLOGS_ISCOMMENT = #{blogsIscomment,jdbcType=CHAR},
+      </if>
+      <if test="blogsState != null" >
+        BLOGS_STATE = #{blogsState,jdbcType=CHAR},
+      </if>
+      <if test="blogContent != null" >
+        BLOG_CONTENT = #{blogContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where BLOG_ID = #{blogId,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cmsblogs.base.pojo.Blog" >
+    update blog
+    set BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR},
+      AUTHOR_ID = #{authorId,jdbcType=VARCHAR},
+      BLOG_TITLE = #{blogTitle,jdbcType=VARCHAR},
+      BLOG_CREATETIME = #{blogCreatetime,jdbcType=DATE},
+      BLOG_VIEWER_CONTENT = #{blogViewerContent,jdbcType=INTEGER},
+      BLOG_STICK = #{blogStick,jdbcType=CHAR},
+      BLOGS_RECOMMEND = #{blogsRecommend,jdbcType=INTEGER},
+      BLOGS_THUMBNAIL = #{blogsThumbnail,jdbcType=VARCHAR},
+      BLOGS_ISCOMMENT = #{blogsIscomment,jdbcType=CHAR},
+      BLOGS_STATE = #{blogsState,jdbcType=CHAR},
+      BLOG_CONTENT = #{blogContent,jdbcType=LONGVARCHAR}
+    where BLOG_ID = #{blogId,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.Blog" >
+    update blog
+    set BLOG_COLUMN_ALIAS = #{blogColumnAlias,jdbcType=VARCHAR},
+      AUTHOR_ID = #{authorId,jdbcType=VARCHAR},
+      BLOG_TITLE = #{blogTitle,jdbcType=VARCHAR},
+      BLOG_CREATETIME = #{blogCreatetime,jdbcType=DATE},
+      BLOG_VIEWER_CONTENT = #{blogViewerContent,jdbcType=INTEGER},
+      BLOG_STICK = #{blogStick,jdbcType=CHAR},
+      BLOGS_RECOMMEND = #{blogsRecommend,jdbcType=INTEGER},
+      BLOGS_THUMBNAIL = #{blogsThumbnail,jdbcType=VARCHAR},
+      BLOGS_ISCOMMENT = #{blogsIscomment,jdbcType=CHAR},
+      BLOGS_STATE = #{blogsState,jdbcType=CHAR}
+    where BLOG_ID = #{blogId,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="queryBlogListByParams" resultMap="ResultMapWithBLOBs" parameterType="map">
+  	select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog 
+   	<where>
+   		<if test="blog.blogStick != null" >
+       	 	BLOG_STICK = #{blog.blogStick,jdbcType=CHAR}
+   	 	</if>
+   	 	<if test="params.authorId != null">
+   	 		and AUTHOR_ID = #{params.authorId,jdbcType=VARCHAR}
+   	 	</if>
+   	</where>
+   	 order by BLOG_CREATETIME desc limit #{params.number,jdbcType=INTEGER}
+  </select>
+</mapper>

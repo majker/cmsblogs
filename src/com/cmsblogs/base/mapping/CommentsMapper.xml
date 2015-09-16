@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.ICommentsMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.Comments" >
+    <id column="COMMENT_ID" property="commentId" jdbcType="VARCHAR" />
+    <result column="BLOG_ID" property="blogId" jdbcType="VARCHAR" />
+    <result column="COMMENT_TIME" property="commentTime" jdbcType="TIME" />
+    <result column="COMMENT_PERSON" property="commentPerson" jdbcType="VARCHAR" />
+    <result column="COMMENT_PICTURE" property="commentPicture" jdbcType="VARCHAR" />
+    <result column="CATEGORY_PARENTID" property="categoryParentid" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.cmsblogs.base.pojo.Comments" extends="BaseResultMap" >
+    <result column="COMMENT_CONTENT" property="commentContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    COMMENT_ID, BLOG_ID, COMMENT_TIME, COMMENT_PERSON, COMMENT_PICTURE, CATEGORY_PARENTID
+  </sql>
+  <sql id="Blob_Column_List" >
+    COMMENT_CONTENT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from comments
+    where COMMENT_ID = #{commentId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from comments
+    where COMMENT_ID = #{commentId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.Comments" >
+    insert into comments (COMMENT_ID, BLOG_ID, COMMENT_TIME, 
+      COMMENT_PERSON, COMMENT_PICTURE, CATEGORY_PARENTID, 
+      COMMENT_CONTENT)
+    values (#{commentId,jdbcType=VARCHAR}, #{blogId,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIME}, 
+      #{commentPerson,jdbcType=VARCHAR}, #{commentPicture,jdbcType=VARCHAR}, #{categoryParentid,jdbcType=VARCHAR}, 
+      #{commentContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.Comments" >
+    insert into comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commentId != null" >
+        COMMENT_ID,
+      </if>
+      <if test="blogId != null" >
+        BLOG_ID,
+      </if>
+      <if test="commentTime != null" >
+        COMMENT_TIME,
+      </if>
+      <if test="commentPerson != null" >
+        COMMENT_PERSON,
+      </if>
+      <if test="commentPicture != null" >
+        COMMENT_PICTURE,
+      </if>
+      <if test="categoryParentid != null" >
+        CATEGORY_PARENTID,
+      </if>
+      <if test="commentContent != null" >
+        COMMENT_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commentId != null" >
+        #{commentId,jdbcType=VARCHAR},
+      </if>
+      <if test="blogId != null" >
+        #{blogId,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        #{commentTime,jdbcType=TIME},
+      </if>
+      <if test="commentPerson != null" >
+        #{commentPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="commentPicture != null" >
+        #{commentPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryParentid != null" >
+        #{categoryParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="commentContent != null" >
+        #{commentContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.Comments" >
+    update comments
+    <set >
+      <if test="blogId != null" >
+        BLOG_ID = #{blogId,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        COMMENT_TIME = #{commentTime,jdbcType=TIME},
+      </if>
+      <if test="commentPerson != null" >
+        COMMENT_PERSON = #{commentPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="commentPicture != null" >
+        COMMENT_PICTURE = #{commentPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryParentid != null" >
+        CATEGORY_PARENTID = #{categoryParentid,jdbcType=VARCHAR},
+      </if>
+      <if test="commentContent != null" >
+        COMMENT_CONTENT = #{commentContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where COMMENT_ID = #{commentId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cmsblogs.base.pojo.Comments" >
+    update comments
+    set BLOG_ID = #{blogId,jdbcType=VARCHAR},
+      COMMENT_TIME = #{commentTime,jdbcType=TIME},
+      COMMENT_PERSON = #{commentPerson,jdbcType=VARCHAR},
+      COMMENT_PICTURE = #{commentPicture,jdbcType=VARCHAR},
+      CATEGORY_PARENTID = #{categoryParentid,jdbcType=VARCHAR},
+      COMMENT_CONTENT = #{commentContent,jdbcType=LONGVARCHAR}
+    where COMMENT_ID = #{commentId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.Comments" >
+    update comments
+    set BLOG_ID = #{blogId,jdbcType=VARCHAR},
+      COMMENT_TIME = #{commentTime,jdbcType=TIME},
+      COMMENT_PERSON = #{commentPerson,jdbcType=VARCHAR},
+      COMMENT_PICTURE = #{commentPicture,jdbcType=VARCHAR},
+      CATEGORY_PARENTID = #{categoryParentid,jdbcType=VARCHAR}
+    where COMMENT_ID = #{commentId,jdbcType=VARCHAR}
+  </update>
+</mapper>

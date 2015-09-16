@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.ICategoryMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.Category" >
+    <id column="CATEGORY_ID" property="categoryId" jdbcType="VARCHAR" />
+    <result column="CATEGORY_NAME" property="categoryName" jdbcType="VARCHAR" />
+    <result column="CATEGORY_SEQ" property="categorySeq" jdbcType="INTEGER" />
+    <result column="CATEGORY_BLOGCOUNT" property="categoryBlogcount" jdbcType="INTEGER" />
+    <result column="CATEGORY_PARENTID" property="categoryParentid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CATEGORY_ID, CATEGORY_NAME, CATEGORY_SEQ, CATEGORY_BLOGCOUNT, CATEGORY_PARENTID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from category
+    where CATEGORY_ID = #{categoryId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from category
+    where CATEGORY_ID = #{categoryId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.Category" >
+    insert into category (CATEGORY_ID, CATEGORY_NAME, CATEGORY_SEQ, 
+      CATEGORY_BLOGCOUNT, CATEGORY_PARENTID)
+    values (#{categoryId,jdbcType=VARCHAR}, #{categoryName,jdbcType=VARCHAR}, #{categorySeq,jdbcType=INTEGER}, 
+      #{categoryBlogcount,jdbcType=INTEGER}, #{categoryParentid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.Category" >
+    insert into category
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="categoryId != null" >
+        CATEGORY_ID,
+      </if>
+      <if test="categoryName != null" >
+        CATEGORY_NAME,
+      </if>
+      <if test="categorySeq != null" >
+        CATEGORY_SEQ,
+      </if>
+      <if test="categoryBlogcount != null" >
+        CATEGORY_BLOGCOUNT,
+      </if>
+      <if test="categoryParentid != null" >
+        CATEGORY_PARENTID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryName != null" >
+        #{categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="categorySeq != null" >
+        #{categorySeq,jdbcType=INTEGER},
+      </if>
+      <if test="categoryBlogcount != null" >
+        #{categoryBlogcount,jdbcType=INTEGER},
+      </if>
+      <if test="categoryParentid != null" >
+        #{categoryParentid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.Category" >
+    update category
+    <set >
+      <if test="categoryName != null" >
+        CATEGORY_NAME = #{categoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="categorySeq != null" >
+        CATEGORY_SEQ = #{categorySeq,jdbcType=INTEGER},
+      </if>
+      <if test="categoryBlogcount != null" >
+        CATEGORY_BLOGCOUNT = #{categoryBlogcount,jdbcType=INTEGER},
+      </if>
+      <if test="categoryParentid != null" >
+        CATEGORY_PARENTID = #{categoryParentid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CATEGORY_ID = #{categoryId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.Category" >
+    update category
+    set CATEGORY_NAME = #{categoryName,jdbcType=VARCHAR},
+      CATEGORY_SEQ = #{categorySeq,jdbcType=INTEGER},
+      CATEGORY_BLOGCOUNT = #{categoryBlogcount,jdbcType=INTEGER},
+      CATEGORY_PARENTID = #{categoryParentid,jdbcType=VARCHAR}
+    where CATEGORY_ID = #{categoryId,jdbcType=VARCHAR}
+  </update>
+</mapper>

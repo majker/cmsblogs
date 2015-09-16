@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IPubApparMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.PubAppar" >
+    <id column="APR_ID" property="aprId" jdbcType="VARCHAR" />
+    <result column="APR_NAME" property="aprName" jdbcType="VARCHAR" />
+    <result column="APR_CODE" property="aprCode" jdbcType="VARCHAR" />
+    <result column="APR_VALUE" property="aprValue" jdbcType="VARCHAR" />
+    <result column="APR_SHOWMSG" property="aprShowmsg" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    APR_ID, APR_NAME, APR_CODE, APR_VALUE, APR_SHOWMSG
+  </sql>
+	<!-- 查询所有的系统参数 -->
+  	<select id="selectAllList" resultMap="BaseResultMap">
+  		select 
+  		<include refid="Base_Column_List" /> 
+  		from pub_appar
+  	</select>
+</mapper>

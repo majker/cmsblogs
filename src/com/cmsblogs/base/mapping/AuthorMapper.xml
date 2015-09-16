@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IAuthorMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.Author" >
+    <id column="AUTHOR_ID" property="authorId" jdbcType="VARCHAR" />
+    <result column="AUTHOR_PASSWORD" property="authorPassword" jdbcType="VARCHAR" />
+    <result column="AUTHOR_NICKNAME" property="authorNickname" jdbcType="VARCHAR" />
+    <result column="AUTHOR_QQ" property="authorQq" jdbcType="VARCHAR" />
+    <result column="AUTHOR_EMAIL" property="authorEmail" jdbcType="VARCHAR" />
+    <result column="AUTHOR_REGISTER_TIME" property="authorRegisterTime" jdbcType="TIME" />
+    <result column="AUTHOR_PICTURE" property="authorPicture" jdbcType="VARCHAR" />
+    <result column="AUTHOR_SAYING" property="authorSaying" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    AUTHOR_ID, AUTHOR_PASSWORD, AUTHOR_NICKNAME, AUTHOR_QQ, AUTHOR_EMAIL, AUTHOR_REGISTER_TIME, 
+    AUTHOR_PICTURE, AUTHOR_SAYING
+  </sql>
+  
+  <!-- 根据id获取作者VO -->
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from author
+    where AUTHOR_ID = #{authorId,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByNickName" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select 
+    <include refid="Base_Column_List" />
+    from author
+    where AUTHOR_NICKNAME = #{nickName,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from author
+    where AUTHOR_ID = #{authorId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.Author" >
+    insert into author (AUTHOR_ID, AUTHOR_PASSWORD, AUTHOR_NICKNAME, 
+      AUTHOR_QQ, AUTHOR_EMAIL, AUTHOR_REGISTER_TIME, 
+      AUTHOR_PICTURE, AUTHOR_SAYING)
+    values (#{authorId,jdbcType=VARCHAR}, #{authorPassword,jdbcType=VARCHAR}, #{authorNickname,jdbcType=VARCHAR}, 
+      #{authorQq,jdbcType=VARCHAR}, #{authorEmail,jdbcType=VARCHAR}, #{authorRegisterTime,jdbcType=TIME}, 
+      #{authorPicture,jdbcType=VARCHAR}, #{authorSaying,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.Author" >
+    insert into author
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="authorId != null" >
+        AUTHOR_ID,
+      </if>
+      <if test="authorPassword != null" >
+        AUTHOR_PASSWORD,
+      </if>
+      <if test="authorNickname != null" >
+        AUTHOR_NICKNAME,
+      </if>
+      <if test="authorQq != null" >
+        AUTHOR_QQ,
+      </if>
+      <if test="authorEmail != null" >
+        AUTHOR_EMAIL,
+      </if>
+      <if test="authorRegisterTime != null" >
+        AUTHOR_REGISTER_TIME,
+      </if>
+      <if test="authorPicture != null" >
+        AUTHOR_PICTURE,
+      </if>
+      <if test="authorSaying != null" >
+        AUTHOR_SAYING,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="authorId != null" >
+        #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="authorPassword != null" >
+        #{authorPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="authorNickname != null" >
+        #{authorNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="authorQq != null" >
+        #{authorQq,jdbcType=VARCHAR},
+      </if>
+      <if test="authorEmail != null" >
+        #{authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="authorRegisterTime != null" >
+        #{authorRegisterTime,jdbcType=TIME},
+      </if>
+      <if test="authorPicture != null" >
+        #{authorPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="authorSaying != null" >
+        #{authorSaying,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.Author" >
+    update author
+    <set >
+      <if test="authorPassword != null" >
+        AUTHOR_PASSWORD = #{authorPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="authorNickname != null" >
+        AUTHOR_NICKNAME = #{authorNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="authorQq != null" >
+        AUTHOR_QQ = #{authorQq,jdbcType=VARCHAR},
+      </if>
+      <if test="authorEmail != null" >
+        AUTHOR_EMAIL = #{authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="authorRegisterTime != null" >
+        AUTHOR_REGISTER_TIME = #{authorRegisterTime,jdbcType=TIME},
+      </if>
+      <if test="authorPicture != null" >
+        AUTHOR_PICTURE = #{authorPicture,jdbcType=VARCHAR},
+      </if>
+      <if test="authorSaying != null" >
+        AUTHOR_SAYING = #{authorSaying,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where AUTHOR_ID = #{authorId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.Author" >
+    update author
+    set AUTHOR_PASSWORD = #{authorPassword,jdbcType=VARCHAR},
+      AUTHOR_NICKNAME = #{authorNickname,jdbcType=VARCHAR},
+      AUTHOR_QQ = #{authorQq,jdbcType=VARCHAR},
+      AUTHOR_EMAIL = #{authorEmail,jdbcType=VARCHAR},
+      AUTHOR_REGISTER_TIME = #{authorRegisterTime,jdbcType=TIME},
+      AUTHOR_PICTURE = #{authorPicture,jdbcType=VARCHAR},
+      AUTHOR_SAYING = #{authorSaying,jdbcType=VARCHAR}
+    where AUTHOR_ID = #{authorId,jdbcType=VARCHAR}
+  </update>
+</mapper>

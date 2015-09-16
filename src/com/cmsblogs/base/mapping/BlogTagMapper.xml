@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IBlogTagMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.BlogTag" >
+    <id column="TAG_ID" property="tagId" jdbcType="VARCHAR" />
+    <result column="TAG_NAME" property="tagName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    TAG_ID, TAG_NAME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_tag
+    where TAG_ID = #{tagId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from blog_tag
+    where TAG_ID = #{tagId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cmsblogs.base.pojo.BlogTag" >
+    insert into blog_tag (TAG_ID, TAG_NAME)
+    values (#{tagId,jdbcType=VARCHAR}, #{tagName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cmsblogs.base.pojo.BlogTag" >
+    insert into blog_tag
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tagId != null" >
+        TAG_ID,
+      </if>
+      <if test="tagName != null" >
+        TAG_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tagId != null" >
+        #{tagId,jdbcType=VARCHAR},
+      </if>
+      <if test="tagName != null" >
+        #{tagName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cmsblogs.base.pojo.BlogTag" >
+    update blog_tag
+    <set >
+      <if test="tagName != null" >
+        TAG_NAME = #{tagName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where TAG_ID = #{tagId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cmsblogs.base.pojo.BlogTag" >
+    update blog_tag
+    set TAG_NAME = #{tagName,jdbcType=VARCHAR}
+    where TAG_ID = #{tagId,jdbcType=VARCHAR}
+  </update>
+</mapper>

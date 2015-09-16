@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmsblogs.base.dao.IPubErrcodeMapper" >
+  <resultMap id="BaseResultMap" type="com.cmsblogs.base.pojo.PubErrcode" >
+    <id column="ERC_ID" property="ercId" jdbcType="VARCHAR" />
+    <result column="ERC_ERRCODE" property="ercErrcode" jdbcType="VARCHAR" />
+    <result column="ERC_SHOWMSG" property="ercShowmsg" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ERC_ID, ERC_ERRCODE, ERC_SHOWMSG
+  </sql>
+
+  <!-- 查询所有的错误代码 -->
+  <select id="selectAllList" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from pub_errcode
+  </select>	
+</mapper>
