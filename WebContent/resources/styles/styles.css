@@ -1,0 +1,145 @@
+.header{
+	width: 100%;
+	padding:0px;
+	margin: 0px;
+	background: #f0eef5 url("../images/body_bg.png") repeat-x scroll 0 0;	
+}
+.blogTitle {
+    background: rgba(0, 0, 0, 0) url("../images/title-bg.png") no-repeat scroll center 21px;
+    clear: both;
+    height: 314px;
+    margin: 0 auto;
+    position: relative;
+    width: 1320px;
+}
+
+
+.blogTitle h1{
+    font-size: 30px;
+    font-weight: normal;
+    height: 105px;
+    left: 77px;
+    line-height: 100px;
+    position: relative;
+    text-align: center;
+    top: 80px;
+    width: 310px;
+}
+
+.blogTitle h1 a,.blogTitle h2{
+	color: #fff;
+}
+
+.blogTitle h1 a:hover{
+	color: #1084B2;
+}
+
+.blogTitle h2 {
+    font-size: 16px;
+    font-weight: normal;
+    height: 75px;
+    left: 67px;
+    line-height: 180%;
+    position: relative;
+    top: 107px;
+    width: 550px;
+}
+
+.navigator{
+    background-color: #169fe6;
+    border:0px;
+    border-bottom:1px solid #138cca;
+    clear: both;
+    height: 60px;
+    position: relative;
+}
+
+.navigator ul{
+	height: 60px;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.navigator ul li{
+	float: left;
+	height: 60px;
+	line-height: 60px;
+}
+
+.navigator ul li a{
+	color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 0px 30px;
+    border-top:3px solid #169fe6;
+}
+
+.navigator ul li a:hover,.navigator ul li.clicked a{
+	background-color: #fff;
+    color: #169fe6;
+    text-decoration: none;
+    border-top:3px solid #F77825;
+}
+
+.content-wrap{
+	width: 1200px;
+	margin: 0px auto;
+}
+
+.sidebar{
+	width: 300px;
+}
+
+.search-col{
+	height: 34px;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%
+}
+
+.form-group{
+	display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    position: relative;
+}
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+.search-col input{
+	color: #0071c5;
+    height: auto;
+    padding: 5px 0px 5px 12px;
+    transition: all 200ms ease-in 0s;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+.search-submit{
+	background: rgba(0, 0, 0, 0) url("../images/btn-srh.jpg") no-repeat scroll 20px 10px;
+    border: 0 none;
+    border-radius: 4px;
+    height: 100%;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    transition: background-color 150ms ease-in 0s;
+    width: 45px;
+}

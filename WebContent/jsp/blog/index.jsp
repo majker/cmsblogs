@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title></title>
+<title>cmsblogs,记录、分享java技术</title>
 </head>
 <body>
 	<jsp:include page="base/topper.jsp" />
+	<div class="content-wrap">
+		<div class="content"></div>
+		<div class="sidebar fr">
+			<jsp:include page="base/sidebar.jsp" />
+		</div>
+	</div>
 </body>
 </html>

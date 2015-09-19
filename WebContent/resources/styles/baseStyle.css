@@ -1,18 +1,15 @@
-body {
-    color: #555555;
-    font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 12px;
-    line-height: 20px;
-    overflow-x: hidden;
-    background-color: #eeeeee;
-    color: #555555;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.header {
-    margin-bottom: 10px;
-    top: 0;
-    width: 100%;
-    z-index: 999;
+body {
+    color: #7d8b8d;
+    font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
 }
 
 .header::before, .container::before, .footer::before, .header::after, .container::after, .footer::after {
@@ -30,4 +27,17 @@ body {
 
 .fr{
 	float: right;
+}
+
+a:link {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul,li {
+    list-style: outside none none;
 }
