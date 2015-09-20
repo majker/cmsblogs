@@ -2,7 +2,6 @@ package com.cmsblogs.base.core;
 
 import java.util.Map;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 /**
  * 系统配置参数池，用于存放系统参数的配置，其中参数配置采用key-value对应<br>

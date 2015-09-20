@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task.xsd
+	">
+	
+	<!-- 博文初始化批处理 -->
+	<bean id="blogContextInitJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.cmsblogs.base.core.schedule.BlogContextInitScheduleJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="message">
+					<value>博文初始化批处理 </value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="blogContextInitTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="blogContextInitJob" />
+		<property name="cronExpression">
+			<!-- 每天早上6点启动 -->
+			<value>0 56 15 ? * *</value>
+		</property>
+	</bean>
+
+	<!-- 调度工厂 -->
+	<bean id="schdulerFactory"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="blogContextInitTrigger"/>
+			</list>
+		</property>
+		<property name="taskExecutor" ref="taskExecutor" />
+	</bean>
+
+	<!-- 线程池 -->
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.quartz.SimpleThreadPoolTaskExecutor">
+		<property name="makeThreadsDaemons" value="true" />
+		<property name="threadCount" value="10" />
+		<property name="threadNamePrefix" value="taskExecutor" />
+		<property name="waitForJobsToCompleteOnShutdown" value="true" />
+	</bean>
+
+</beans>
+
+<!-- 
+"0 0 12 * * ?" 每天中午12点触发 
+"0 15 10 ? * *" 每天上午10:15触发 
+"0 15 10 * * ?" 每天上午10:15触发 
+"0 15 10 * * ? *" 每天上午10:15触发 
+"0 15 10 * * ? 2005" 2005年的每天上午10:15触发 
+"0 * 14 * * ?" 在每天下午2点到下午2:59期间的每1分钟触发 
+"0 0/5 14 * * ?" 在每天下午2点到下午2:55期间的每5分钟触发 
+"0 0/5 14,18 * * ?" 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 
+"0 0-5 14 * * ?" 在每天下午2点到下午2:05期间的每1分钟触发 
+"0 10,44 14 ? 3 WED" 每年三月的星期三的下午2:10和2:44触发 
+"0 15 10 ? * MON-FRI" 周一至周五的上午10:15触发 
+"0 15 10 15 * ?" 每月15日上午10:15触发 
+"0 15 10 L * ?" 每月最后一日的上午10:15触发 
+"0 15 10 ? * 6L" 每月的最后一个星期五上午10:15触发 
+"0 15 10 ? * 6L 2002-2005" 2002年至2005年的每月的最后一个星期五上午10:15触发 
+"0 15 10 ? * 6#3" 每月的第三个星期五上午10:15触发 
+-->
+

@@ -6,8 +6,12 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
+			<!-- 数据源 -->
 			classpath:config/spring/dataAccessContext.xml;
+			<!-- spring 配置 -->
 			classpath:config/spring/spring.xml;
+			<!-- spring 定时任务 -->
+			classpath:config/spring/jobScheduling.xml;
 		</param-value>
 	</context-param>
 	

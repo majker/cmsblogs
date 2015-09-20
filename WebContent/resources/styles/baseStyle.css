@@ -4,12 +4,12 @@
 }
 
 body {
+	background-color:#ffffff;
     color: #7d8b8d;
     font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
     overflow-x: hidden;
-    background-color: #FFFFFF;
 }
 
 .header::before, .container::before, .footer::before, .header::after, .container::after, .footer::after {
@@ -29,15 +29,29 @@ body {
 	float: right;
 }
 
-a:link {
-    color: #000;
-    text-decoration: none;
+a{
+	color: #428bd1;
+	text-decoration: none;
 }
 
 a:hover {
+	color:#3071a9;
     text-decoration: none;
 }
 
 ul,li {
     list-style: outside none none;
+}
+
+img {
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+*::-moz-selection {
+    background: #72d0eb none repeat scroll 0 0;
+    color: #fff;
+    text-shadow: none;
 }

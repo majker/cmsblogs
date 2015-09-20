@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/styles/baseStyle.css'/>" />
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/styles/styles.css'/>" />
+<script language="javascript" type="text/javascript" src="<c:url value='/resources/js/public.js'/>" ></script>
 </head>
 <body>
 	<div class="header" id="header">
@@ -25,6 +26,9 @@
 				<li><a href="javascript:void(0);">关于博主</a></li>
 			</ul>
 		</div>
+	</div>
+	<div class="bottom_tools">
+		<a id="scrollUp" title="飞回顶部" href="javascript:;"></a>
 	</div>
 </body>
 </html>

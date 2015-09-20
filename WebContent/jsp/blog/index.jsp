@@ -1,18 +1,113 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>cmsblogs,记录、分享java技术</title>
+<script language="javascript" type="text/javascript" src="<c:url value='/resources/js/jquery-1.9.1.min.js'/>" ></script>
+<script language="javascript" type="text/javascript" src="<c:url value='/resources/js/blog/index.js'/>" ></script>
 </head>
 <body>
+	<!-- 顶部 -->
 	<jsp:include page="base/topper.jsp" />
-	<div class="content-wrap">
-		<div class="content"></div>
-		<div class="sidebar fr">
-			<jsp:include page="base/sidebar.jsp" />
+	<!-- 中间内容 -->
+	<div class="home">
+		<div class="content-wrap">
+			<!-- 博客内容 -->
+			<div class="content fl">
+				<div class="blog-tabs">
+					<div class="tabs-title">
+						<ul>
+							<li id="zdbl" class="zdbl hit">置顶博客</li>
+							<li	id="bzzl" class="bzzl">博主专栏</li>
+							<li class="readmore">
+								<span>more</span>
+							</li>
+						</ul>
+					</div>
+					<div class="tabs-content">
+						<div id="zdbl_content" class="sticky">
+							<ul>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920001.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920002.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920003.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920004.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920005.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920005.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920005.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div id="bzzl_content" class="blog-col" style="display: none">
+							<ul>
+								<li>
+									<a href="" class="li-a">
+										<img src="resources/images/blog/blog/20150920001.jpg" />
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<a href="">【Java并发编程实战】—–“J.U.C”：Condition</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”：Condition</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”：Condition</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”：Condition</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”：Condition</a>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="newBlog">
+					
+				</div>
+			</div>
+			<!-- 侧边栏 -->
+			<div class="sidebar fr">
+				<jsp:include page="base/sidebar.jsp" />
+			</div>
 		</div>
 	</div>
+	<!-- 底部 -->
 </body>
 </html>
