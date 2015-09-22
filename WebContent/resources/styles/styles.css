@@ -156,6 +156,7 @@
     margin-top: 15px;
     border: 1px solid #ebedf1;
     border-radius:5px;
+    overflow: hidden;
 }
 
 .widget .widget_tit{
@@ -260,8 +261,7 @@
 	background: rgba(0, 0, 0, 0) url("../images/back-top.png") no-repeat scroll left -55px;
 }
 
-.d-tg-rz a.wdgih{
-	width:100%;
+.d-tg-rz a.wdlj{
 	color: #fff;
 	background-color: #30a4e6;
 	display: block;
@@ -271,12 +271,36 @@
 	border: medium none;
 	font-size: 18px;
     line-height: 1.33;
-    width: 90%;
     margin: 5px auto 15px;
 }
 
-.d-tg-rz a.wdgih:hover{
+.d-tg-rz a.github{
+	width:90%;
+	background-color: #30a4e6;
+}
+
+.d-tg-rz a.github:hover{
 	background-color: #178dd0;
+}
+
+.d-tg-rz a.cnblogs{
+	width: 42%;
+	margin-left: 5%;
+	background-color:#d9534f;
+}
+
+.d-tg-rz a.cnblogs:hover{
+	background-color: #c9302c;
+}
+
+.d-tg-rz a.csdn{
+	width: 42%;
+	margin-right: 5%;
+	background-color: #f0ad4e;
+}
+
+.d-tg-rz a.csdn:hover{
+	background-color: #ec971f;
 }
 
 .content-wrap .content{
@@ -354,6 +378,7 @@
     display: block;
     margin-right: 1px;
     padding: 5px 20px 5px 140px;
+    overflow: hidden;
 }
 
 .tabs-content a.li-a:hover{
@@ -397,11 +422,16 @@
 }
 
 .blog-col li{
-	height: 180px
+	height: 180px;
 }
 
 .blog-col img{
 	margin: 8px 0 0 -120px;
     height: 160px;
     width: 100px;
+}
+
+.blog-col .li-a ul{
+	overflow: hidden;
+	width: 100px;
 }
