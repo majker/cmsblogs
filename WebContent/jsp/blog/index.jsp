@@ -31,75 +31,123 @@
 						<div id="zdbl_content" class="sticky">
 							<ul>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920001.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920001.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
 								</li>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920002.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920002.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
 								</li>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920003.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920003.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
 								</li>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920004.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920004.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
 								</li>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920005.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920004.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
 								</li>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920005.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920001.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
 								</li>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920005.jpg" />
-										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p class="">2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常在怀疑自己，怀疑自己还是不是那个有斗</p>
-									</a>
-								</li>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920002.jpg" class="fl"/>
+										<h3>java7并发编程实战】—–总体目录</h3>
+										<p>2014年是LZ比较坑的一年，经常出差，经常加班，经常累的趴下，经常没时间看书，所以导致LZ经常...</p>
+									</div>
+								</li>								
 							</ul>
 						</div>
 						<div id="bzzl_content" class="blog-col" style="display: none">
 							<ul>
 								<li>
-									<a href="" class="li-a">
-										<img src="resources/images/blog/blog/20150920001.jpg" />
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920001.jpg" class="fl"/>
 										<h3>【java7并发编程实战】—–总体目录</h3>
-										<p><a href="">【Java并发编程实战】—–“J.U.C”：Condition</a></p>
-										<p><a href="">【Java并发编程实战】—–“J.U.C”：Condition</a></p>
-										<p><a href="">【Java并发编程实战】—–“J.U.C”：Condition</a></p>
-										<p><a href="">【Java并发编程实战】—–“J.U.C”：Condition</a></p>
-										<p><a href="">【Java并发编程实战】—–“J.U.C”：Condition</a></p>
-									</a>
+										<hr class="blog-col-hr"/>
+										<a href="https://www.baidu.com/" target="_blank">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cnblogs.con">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cmsblogs.com">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+									</div>
+								</li>
+								<li>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920002.jpg" class="fl"/>
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<hr class="blog-col-hr"/>
+										<a href="https://www.baidu.com/" target="_blank">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cnblogs.con">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cmsblogs.com">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+									</div>
+								</li>
+								<li>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920003.jpg" class="fl"/>
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<hr class="blog-col-hr"/>
+										<a href="https://www.baidu.com/" target="_blank">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cnblogs.con">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cmsblogs.com">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+									</div>
+								</li>
+								<li>
+									<div class="li-div">
+										<img src="resources/images/blog/blog/20150920004.jpg" class="fl"/>
+										<h3>【java7并发编程实战】—–总体目录</h3>
+										<hr class="blog-col-hr"/>
+										<a href="https://www.baidu.com/" target="_blank">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cnblogs.con">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="www.cmsblogs.com">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+										<a href="">【Java并发编程实战】—–“J.U.C”...</a>
+									</div>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="newBlog">
-					
+					<div class="title"><h3>最新发布</h3></div>
+					<ul id="newBlog">
+						<li>
+							<a href="" class="img-a fl"><img src="resources/images/blog/blog/2015092300001.jpg"></a>
+							<span class="blog-title">
+								<a href="" class="label">java并发编程<i class="label-arrow"></i></a>
+								<h2><a href="">【Java并发编程实战】—–“J.U.C”：ReentrantLock之二lock方法分析</a></h2>
+							</span>
+							<p class="blog-info"></p>
+							<p class="blog-content"></p>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<!-- 侧边栏 -->
