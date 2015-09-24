@@ -157,7 +157,10 @@
     border: 1px solid #ebedf1;
     border-radius:5px;
     overflow: hidden;
-    border-bottom: 0px;
+}
+
+.blog-tabs{
+	border-bottom: 0px;
 }
 
 .widget .widget_tit{
@@ -556,4 +559,52 @@
     top: 1px;
 }
 
+.blog-info{
+	margin: 10px 0px
+}
 
+.muted {
+    color: #999999;
+    margin-right: 20px;
+}
+
+.muted [class^="icon-"], .muted [class*=" icon-"] {
+    opacity: 0.4;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    background-image: url("../images/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 4px;
+    vertical-align: text-top;
+    width: 14px;
+}
+.icon12 {
+    margin-top: 2px;
+}
+.icon-user {
+    background-position: -168px 0;
+}
+
+.icon-time {
+    background-position: -48px -24px;
+}
+.icon-eye-open {
+    background-position: -96px -120px;
+}
+.icon-comment {
+    background-position: -240px -120px;
+}
+.icon-love{
+	background-position: -95px 0;
+}
+.blog-content{
+	color: #777;
+    font-size: 14px;
+    line-height: 24px;
+    text-indent: 2em;
+}
